@@ -1,7 +1,7 @@
 services:
   - type: web
     name: task-app
-    plan: free
+    runtime: static
     buildCommand: "./gradlew build"
     startCommand: "java -jar build/libs/task-1.0-SNAPSHOT.jar"
     envVars:
