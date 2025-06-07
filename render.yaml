@@ -2,8 +2,6 @@ services:
   - type: web
     name: task-app
     runtime: docker
-    buildCommand: "./gradlew build"
-    startCommand: "java -jar build/libs/task-1.0-SNAPSHOT.jar"
-    envVars:
-      - key: JAVA_VERSION
-        value: 17
+    repo: https://github.com/Nubchulubs12/task
+    branch: main
+    autoDeploy: true
