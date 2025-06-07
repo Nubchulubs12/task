@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tasks</title>
+</head>
+<body>
+<h1>Welcome, <span th:text="${userName}">User</span> <form th:action="@{/logout}" method="post">
+    <button type="submit">Sign Out</button>
+</form>
+</h1>
+
+<h2>Your Tasks:</h2>
+
+<a href="/tasks/add">Add Task</a>
+<div th:if="${#lists.size(tasks) > 0}">
+</div>
+<div th:unless="${#lists.size(tasks) > 0}">
+    <h3>No tasks found.</h3>
+</div>
+
+<ul>
+    <li th:each="task : ${tasks}">
+        <strong th:text="${task.title}"></strong> -
+        <span th:text="${task.description}"></span> -
+        <em th:text="${task.dueDate}"></em>
+
+        <form th:action="@{/tasks/delete}" method="post" style="display:inline;">
+            <input type="hidden" name="title" th:value="${task.title}" />
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+<br />
+<a href="/index">Home</a>
+</body>
+</html>
+
+

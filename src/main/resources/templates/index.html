@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head><title>Tasks Home</title></head>
+<body>
+<div sec:authorize="isAuthenticated()">
+    <h1>Welcome,  <span th:text="${userName}">User</span></h1>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+<div sec:authorize="!isAuthenticated()">
+    <h1>Welcome to the Task App</h1>
+    <p><a href="/oauth2/authorization/google">Sign in with Google</a></p>
+</div>
+<br />
+<a href="/tasks">Tasks</a>
+
+</body>
+</html>

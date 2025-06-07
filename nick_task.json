@@ -1,0 +1,10 @@
+{
+  "username": "nick",
+  "tasks": [
+    {
+      "title": "Finish project",
+      "description": "Complete the Java task app",
+      "dueDate": "2025-06-05"
+    }
+  ]
+}
