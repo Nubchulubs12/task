@@ -2,6 +2,7 @@ services:
   - type: web
     name: task-app
     runtime: static
+    autoDeploy: true
     buildCommand: "./gradlew build"
     startCommand: "java -jar build/libs/task-1.0-SNAPSHOT.jar"
     envVars:
